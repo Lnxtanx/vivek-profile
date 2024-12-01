@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code with Vivek - C Language Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content pre {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        .content h2 {
+            color: #007acc;
+            margin-top: 20px;
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code with Vivek - C Language Game</h1>
+    </header>
+    
+    <div class="content">
+        <h2>The Game: A Simple Number Trick</h2>
+        <p>This is a simple interactive game built using the C programming language. The game guides the player through a series of steps involving thinking of numbers, performing basic math, and revealing a final result based on random numbers.</p>
+
+        <h2>Game Code</h2>
+        <p>Here’s the C code that runs the game:</p>
+        
+        <pre>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int friendNumber, total;
+    char confirmation;
+    int randomNumber;
+
+    srand(time(0)); 
+    randomNumber = (rand() % 90) + 10;
+
+    printf("Step 1: Think of a number in your mind (you don't need to tell me).\n");
+    printf("Did you think of a number? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please think of a number first. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nStep 2: take the same number from your friend.\n");
+    printf("Did you take the number from your friend? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please take the number from your friend to proceed. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nStep 3: I am giving you a random number.\n");
+    printf("My random number is: %d\n", randomNumber);
+
+    printf("Did you note down my random number? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please note down my random number to proceed. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nStep 4: Add your number, your friend's number, and my random number.\n");
+    printf("Did you add them all? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please add the numbers to proceed. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nStep 5: Divide the total by 2 and give one part to God.\n");
+    printf("have you divide the total and give one part to God? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please divide the total to proceed. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nStep 6: Now, return the number you took from your friend.\n");
+    printf("Did you return the number to your friend? (y/n): ");
+    scanf(" %c", &confirmation);
+    if (confirmation != 'y') {
+        printf("Please return the number to your friend to proceed. Restart the game.\n");
+        return 0;
+    }
+
+    printf("\nFinal Step: now i am gonna to say your number...\n");
+    printf("The final number left with you: %2f\n", (float)randomNumber / 2);
+
+    printf("Game over. Thank you for playing!\n");
+    return 0;
+}
+        </pre>
+
+        <h2>How It Works</h2>
+        <p>The game is based on a mathematical trick where the result is influenced by a random number I generate. By following the steps carefully, the player always ends up with the same result.</p>
+        <p>This is a fun demonstration of how you can combine logic and randomness in a simple C program.</p>
+
+        <h2>About C Language</h2>
+        <p>The C programming language, developed in the early 1970s by Dennis Ritchie, is one of the most widely used and powerful programming languages. It serves as the foundation for many modern languages like C++, Java, and Python. Known for its efficiency, C allows developers to write programs that interact closely with system hardware, making it ideal for system programming, embedded systems, and game development.</p>
+
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Code with Vivek | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

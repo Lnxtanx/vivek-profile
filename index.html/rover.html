@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Rover - Project Guide</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4A90E2, #9013FE);
+            color: #fff;
+        }
+    
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #2C3E50;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+    
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #34495E;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+    
+        .section {
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .section h2 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #F1C40F;
+            text-shadow: 2px 2px 5px #000;
+            flex-basis: 100%;
+        }
+    
+        .section p,
+        .section ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+            flex: 1 1 60%;
+        }
+    
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+    
+        ul li {
+            margin: 10px 0;
+        }
+    
+        .media-frame {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+    
+        .media-frame img {
+            width: calc(30% - 20px);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .code {
+            background: #1C2833;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            color: #27AE60;
+        }
+    
+        .image-container {
+            flex: 1 1 30%;
+            text-align: center;
+        }
+    
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            margin: 0 auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2C3E50;
+        }
+    
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
+       
+</head>
+
+<body>
+    <header>
+        <h1>Rover</h1>
+        <p>How to Built This</p>
+    </header>
+
+    <video src="working rover.mp4" controls loop autoplay muted width="300" height="500"></video>
+
+    <div class="container">
+        <!-- Materials Section -->
+        <div class="section">
+            <h2>1. Materials Required</h2>
+            <p>Gather the following materials to start building your Rover:</p>
+            <ul>
+                <li>Cardboard</li>
+                <li>Bottle caps</li>
+                <li>Aluminum-plastic board</li>
+                <li>DC motors (12V, 6 pieces)</li>
+                <li>Jump wires (male-to-male and female-to-female)</li>
+                <li>Arduino Uno</li>
+                <li>L298N motor driver module</li>
+                <li>Bluetooth HC-05 module</li>
+                <li>Lithium battery</li>
+                <li>Double-sided tape</li>
+                <li>Glue stick and glue gun</li>
+                <li>Cardboard cutter</li>
+                <li>PVC pipes</li>
+            </ul>
+            <div class="image-container ">
+                <img src="body1.jpg" width="100" height="200" alt="">
+                <img src="tyre1.jpg" width="100" height="200" alt="">
+                <img src="battery.jpg" width="100" height="200" alt="">
+                <img src="tyre3.jpg" width="100" height="200" alt="DC Motors">
+                <img src="arduino-uno.jpg" width="100" height="200" alt="Arduino Uno">
+                <img src="l298n.jpg" width="100" height="200" alt="L298N Motor Driver">
+                <img src="hc-05.jpg" width="100" height="200" alt="Bluetooth HC-05">
+                <img src="body2jpg.jpg" width="100" height="200" alt="">
+                <img src="beam2.jpg" width="100" height="200" alt="">
+                <img src="beam.jpg" width="100" height="200" alt="">
+
+            </div>
+        </div>
+
+        <!-- Structure Section -->
+        <div class="section">
+            <h2>2. Structure and Design</h2>
+            <p>Dimensions:</p>
+            <ul>
+                <li>Aluminum plastic board: 24 cm (length) × 17 cm (breadth)</li>
+                <li>PVC pipes: 24 cm (length) × 3 cm (breadth) – 2 pieces</li>
+                <li>Beams:
+                    <ul>
+                        <li>20 cm (length) × 2 cm (breadth) – 4 pieces</li>
+                        <li>12 cm (length) × 2 cm (breadth) – 2 pieces</li>
+                    </ul>
+                </li>
+                <li>Tyres:
+                    <ul>
+                        <li>6 tyres cut from cardboard, each with a radius of 4 cm (1 tyre = 5 layers of cardboard)</li>
+                        <li>Hole in each tyre: 3 cm (diameter) × 1.5 cm (radius) × 2 cm (depth)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="image-container">
+            <img src="body2jpg.jpg" width="100" height="200" alt="">
+            <img src="body1.jpg" width="100" height="200" alt="">
+            <img src="beam.jpg" width="100" height="200" alt="">
+            <img src="tyre3.jpg" width="100" height="200" alt="">
+
+        </div>
+    </div>
+
+    <!-- Construction Section -->
+    <div class="section">
+        <h2>3. Construction</h2>
+        <h3>Building the Structure</h3>
+        <p>Take the aluminum plastic cardboard and attach 2 PVC pipes parallelly along the length of the cardboard
+            using a glue gun, placing them at both corners. Cut the PVC pipes in the middle, leaving a 4 cm section
+            attached to the cardboard for support.</p>
+
+        <p>Attach the 20 cm beams at a 120° angle to the cut PVC pipe sections using the glue gun. Repeat on both
+            sides to strengthen the structure. Attach a 12 cm beam to the front of the structure for additional
+            support.</p>
+
+        <p>Assemble the tyres:</p>
+        <ul>
+            <li>Glue together 5 layers of cardboard to create each tyre.</li>
+            <li>Dig a hole (2 cm depth, 1.5 cm radius) in the center of each tyre and attach a bottle cap to it
+                using a glue gun.
+            <li>Create a hole in the bottle cap to fit the motor nozzle. Use Fevistick for a secure attachment.</li>
+            <li>Fix the motors to the beams using a glue gun, ensuring a ground clearance of 20 cm for all tyres.
+                Position the middle tyres inward-facing.</li>
+        </ul>
+
+    </div>
+    <div class="image-container">
+        <div class="image-container">
+            <img src="body2jpg.jpg" width="100" height="200" alt="">
+            <img src="body1.jpg" width="100" height="200" alt="">
+            <img src="body 5.jpg" width="100" height="200" alt="">
+            <img src="body7.jpg" width="100" height="200" alt="">
+            <img src="body8.jpg" width="100" height="200" alt="">
+            <img src="body9.jpg" width="100" height="200" alt="">
+            <img src="body10.jpg" width="100" height="200" alt="">
+            <img src="body11.jpg" width="100" height="200" alt="">
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+    <div class="section">
+        <h3>Adding Electronic Parts</h3>
+        <p>Connect all motors with jump wires. Attach the Arduino Uno to the center of the upper body using
+            double-sided tape and place the battery nearby. Follow these steps for wiring:</p>
+        <ul>
+            <li>Group the motors:
+                <ul>
+                    <li>Connect the positive terminals of 3 motors on one side to form a single positive terminal,
+                        and do the same for the negative terminals. Repeat for the other side.</li>
+                    <li>Connect the grouped motor terminals to the L298N motor driver.</li>
+                </ul>
+            </li>
+            <li>Wire the L298N to the Arduino Uno using male-to-male jump wires:
+                <ul>
+                    <li>IN1 → Pin 7</li>
+                    <li>IN2 → Pin 8</li>
+                    <li>IN3 → Pin 9</li>
+                    <li>IN4 → Pin 10</li>
+                </ul>
+            </li>
+            <li>Connect the HC-05 Bluetooth module to the Arduino Uno using male-to-female wires:
+                <ul>
+                    <li>TX → TX</li>
+                    <li>RX → RX</li>
+                    <li>GND → GND</li>
+                    <li>VCC → 5V</li>
+                </ul>
+            </li>
+            <li>Connect the battery to the L298N and Arduino Uno:
+                <ul>
+                    <li>GND → 3.3V</li>
+                    <li>5V → VIN</li>
+                    <li>+12V → Battery terminal</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Working Section -->
+    <div class="section">
+        <video src="rover me.mp4" loop controls muted autoplay width="200" height="500"></video>
+        <h2>4. Working Process</h2>
+        <p>Once the construction and electronic setup are complete, follow these steps to operate the rover:</p>
+        <ul>
+            <li><b>Step 1:</b> Power On - Switch on the lithium battery to power the Arduino Uno and L298N motor
+                driver.</li>
+            <li><b>Step 2:</b> Bluetooth Pairing - Enable Bluetooth on your smartphone or computer. Pair with the
+                HC-05 module.</li>
+            <li><b>Step 3:</b> Control the Rover - Use a Bluetooth terminal app to send commands:</li>
+            <ul>
+                <li>'F': Move forward</li>
+                <li>'B': Move backward</li>
+                <li>'L': Turn left</li>
+                <li>'R': Turn right</li>
+                <li>'S': Stop</li>
+            </ul>
+            <li><b>Step 4:</b> Observe - Test the rover's movement on different surfaces and make necessary
+                adjustments if any issues arise.</li>
+            <li><b>Step 5:</b> Power Off - Turn off the battery after use.</li>
+        </ul>
+    </div>
+
+    <!-- Coding Section -->
+    <div class="section">
+        <h2>5. Coding</h2>
+        <p>Here is the Arduino code:</p>
+        <div class="code">
+            <pre>
+/// Complete Arduino Code
+const int IN1 = 7;
+const int IN2 = 8;
+const int IN3 = 9;
+const int IN4 = 10;
+
+void setup() {
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available()) {
+    char command = Serial.read();
+    if (command == 'F') {
+      digitalWrite(IN1, HIGH);
+      digitalWrite(IN2, LOW);
+      digitalWrite(IN3, HIGH);
+      digitalWrite(IN4, LOW);
+    } else if (command == 'B') {
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, HIGH);
+      digitalWrite(IN3, LOW);
+      digitalWrite(IN4, HIGH);
+    } else if (command == 'L') {
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, HIGH);
+      digitalWrite(IN3, HIGH);
+      digitalWrite(IN4, LOW);
+    } else if (command == 'R') {
+      digitalWrite(IN1, HIGH);
+      digitalWrite(IN2, LOW);
+      digitalWrite(IN3, LOW);
+      digitalWrite(IN4, HIGH);
+    } else if (command == 'S') {
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, LOW);
+      digitalWrite(IN3, LOW);
+      digitalWrite(IN4, LOW);
+    }
+  }
+}
+ please remeber that this code is used according to pin you connect in arduino-uno 
+                </pre>
+        </div>
+    </div>
+    </div>
+    <div>
+        <h1>Team members</h1>
+        <img src="team member.jpg" alt="">
+        
+    </div>
+    <div>
+        For any queries, feel free to reach out to me at 
+        <a href="mailto:vivekvenom138@gmail.com">vivekvenom138@gmail.com</a>
+      </div>
+      
+    <footer>
+        <p>© 2024 Build Your Rover | Designed by Vivek Kumar</p>
+    </footer>
+</body>
+
+</html>
